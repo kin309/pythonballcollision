@@ -60,24 +60,6 @@ class Ball:
             else:
                 self.tempo_no_chao = 0
 
-    def forca_aplicada(self):
-        mx, my = pygame.mouse.get_pos()
-        distancia_mouse_bola_x = mx - self.x
-        distancia_mouse_bola_y = my - self.y
-        forcax = distancia_mouse_bola_x
-        forcay = distancia_mouse_bola_y
-        self.speedx -= forcax/30000
-        self.speedy -= forcay/30000
-        if self.speedx > 0 and self.speedx > 1:
-            self.speedx = 1
-        if self.speedx < 0 and self.speedx < -1:
-            self.speedx = -1
-        if self.speedy > 0 and self.speedy > 1:
-            self.speedy = 1
-        if self.speedy < 0 and self.speedy < -1:
-            self.speedy = -1
-
-
 def checkcollisions():
     for i in range(len(balls)):
         for j in range(len(balls) - 1, i, -1):
@@ -117,13 +99,13 @@ pygame.init()
 janela = pygame.display.set_mode((janela_lar, janela_alt))
 
 
-ball1 = Ball(x=80, y=80, speedx=randrange(-4, 4)/10, speedy=-0.5, color=green)
-ball2 = Ball(x=120, y=310, speedx=randrange(-4, 4)/10, speedy=-0.5, color=blue)
+ball1 = Ball(x=80, y=80, speedx=randrange(-4, 4)/10, speedy=-0.4, color=green)
+ball2 = Ball(x=120, y=310, speedx=randrange(-4, 4)/10, speedy=-0.4, color=blue)
 ball3 = Ball(x=200, y=330, speedx=randrange(-4, 4)/10, speedy=-0.5, color=purplered)
-ball4 = Ball(x=500, y=420, speedx=randrange(-4, 4)/10, speedy=-0.5, color=yellow)
-ball5 = Ball(x=350, y=240, speedx=randrange(-4, 4)/10, speedy=-0.5, color=red)
-ball6 = Ball(x=160, y=160, speedx=randrange(-4, 4)/10, speedy=-0.5, color=bleue)
-ball7 = Ball(x=240, y=620, speedx=randrange(-4, 4)/10, speedy=-0.5, color=pink)
+ball4 = Ball(x=500, y=420, speedx=randrange(-4, 4)/10, speedy=-0.3, color=yellow)
+ball5 = Ball(x=350, y=240, speedx=randrange(-4, 4)/10, speedy=-0.4, color=red)
+ball6 = Ball(x=160, y=160, speedx=randrange(-4, 4)/10, speedy=-0.3, color=bleue)
+ball7 = Ball(x=240, y=620, speedx=randrange(-4, 4)/10, speedy=-0.3, color=pink)
 ball8 = Ball(x=450, y=660, speedx=-randrange(-4, 4)/10, speedy=-0.5, color=nao)
 ball9 = Ball(x=710, y=710, speedx=randrange(-4, 4)/10, speedy=-0.5, color=purpleblue)
 ball10 = Ball(x=340, y=540, speedx=randrange(-4, 4)/10, speedy=-0.5, color=gren)
@@ -145,19 +127,12 @@ def principal():
                 close()
 
         for ball in balls:
-            ball.forca_aplicada()
+            pass
+            # ball.forca_aplicada()
         janela.fill(black)
         checkcollisions()
-        ball1.principal()
-        ball2.principal()
-        ball3.principal()
-        ball4.principal()
-        ball5.principal()
-        ball6.principal()
-        ball7.principal()
-        ball8.principal()
-        ball9.principal()
-        ball10.principal()
+        for ball in balls:
+            ball.principal()
         pygame.display.update()
 
 
