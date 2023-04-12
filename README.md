@@ -29,7 +29,7 @@ Utilizei também outras bibliotecas, para algumas funcionalidades, como por exem
 
 O construtor da classe Ball, que possui uma série de parâmetros que definem as propriedades das bolas, como por exemplo, a velocidade atual, a fricção, o tamanho, a cor, etc.
 
-`class Ball:
+```class Ball:
     def __init__(self, x, y, speedx, speedy, color, diametro = 60, gravidade = 0.0002, accelerationx=0, friccao = 0.0009,
                  constituicao = 0.09):
         self.x = x
@@ -45,4 +45,4 @@ O construtor da classe Ball, que possui uma série de parâmetros que definem as
         self.diametro = diametro
         self.raio = diametro/2
         self.tempo_no_chao = 0
- `
+ ```
