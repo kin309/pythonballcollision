@@ -44,4 +44,5 @@ O construtor da classe Ball, que possui uma série de parâmetros que definem as
         self.color = color
         self.diametro = diametro
         self.raio = diametro/2
-        self.tempo_no_chao = 0`
+        self.tempo_no_chao = 0
+ `
