@@ -47,3 +47,46 @@ class Ball:
         self.raio = diametro/2
         self.tempo_no_chao = 0
  ```
+ 
+ Método principal da classe Ball responsável por todas as funcionalidades da classe, e por todos os comportamentos físicos do objeto
+ '''
+ def principal(self):
+        pygame.draw.ellipse(janela, self.color, (self.x - self.raio, self.y - self.raio, self.diametro, self.diametro))
+
+        self.x += self.speedx
+        self.y += self.speedy
+        self.speedy += self.accelerationy
+        self.speedx += self.accelerationx
+
+        # Colisão lado esquerdo
+        if self.x - self.raio <= 0:
+            self.x = 0.1 + self.raio
+            self.speedx = (-self.speedx)+(self.speedx*self.constituicao+0.00111)
+
+        # Colisão lado direito
+        if self.x + self.raio >= janela_lar:
+            self.x = janela_lar - 0.1 - self.raio
+            self.speedx = (-self.speedx)+(self.speedx*self.constituicao+0.00111)
+
+        # Colisão em cima
+        if self.y - self.raio <= 0:
+            self.y = 0 + self.raio
+            self.speedy = (-self.speedy)-(self.speedy*self.constituicao+0.00111)
+
+        # Colisão em baixo
+        if self.y + self.raio >= janela_alt - 0.1:
+            self.y = janela_alt - 0.2 - self.raio
+            self.speedy = (-self.speedy) + (self.speedy * self.constituicao + 0.00241)
+            self.speedx = self.speedx - self.speedx * self.friccao
+
+            # Check se a bola está no chão
+            if self.y + self.raio > 599.6:
+                self.tempo_no_chao += 1
+                if self.tempo_no_chao > 50:
+                    self.speedy = 0
+                    self.accelerationy = 0
+                    self.y = 599.9 - self.raio
+            else:
+                self.tempo_no_chao = 0
+
+ '''
