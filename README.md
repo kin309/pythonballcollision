@@ -50,7 +50,7 @@ class Ball:
  
  Método principal da classe Ball responsável por todas as funcionalidades da classe, e por todos os comportamentos físicos do objeto
  
- '
+ 
  def principal(self):
         pygame.draw.ellipse(janela, self.color, (self.x - self.raio, self.y - self.raio, self.diametro, self.diametro))
 
@@ -90,4 +90,4 @@ class Ball:
             else:
                 self.tempo_no_chao = 0
 
- '
+ 
