@@ -155,7 +155,7 @@ ball10 = Ball(x=340, y=540, speedx=randrange(-4, 4)/10, speedy=-0.5, color=gren)
 
 ```
 
-Método principal onde ocorre o loop do jogo e o programa é executado
+Método principal onde ocorre o loop do jogo e toda execução do código
 
 ```
 def principal():
