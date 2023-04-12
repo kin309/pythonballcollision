@@ -1,6 +1,6 @@
 # Colisão de Bolas em Python
 
-Colisão de Bolas em Python é um código simples, que gera bolas que ficam quicando na tela e colidindo umas com as outras utilizando leis da física, foi um dos primeiros programas que eu fiz, apesar de simples fiquei muito feliz com o resultado e apartir daí comecei a me interessar mais sobre programação
+Colisão de Bolas em Python é um código simples, que gera bolas que ficam quicando na tela e colidindo umas com as outras, utilizando leis da física, foi um dos primeiros programas que eu fiz, apesar de simples fiquei muito feliz com o resultado e apartir daí comecei a me interessar mais sobre programação
 
 ## Tela do programa
 
