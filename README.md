@@ -91,3 +91,67 @@ class Ball:
                 self.tempo_no_chao = 0
                 
  ```
+ ## Outros Métodos e Instâncias dos Objetos
+ 
+ Método responsável pela colisão das bolas
+ 
+ ```
+ def checkcollisions():
+    for i in range(len(balls)):
+        for j in range(len(balls) - 1, i, -1):
+            distancia_bolas = ((balls[i].x - balls[j].x)**2 + (balls[i].y - balls[j].y)**2)**0.5
+            if distancia_bolas <= balls[i].raio + balls[j].raio:
+                    if i != j:
+                        vb1 = np.array([balls[i].speedx, balls[i].speedy])
+                        vb2 = np.array([balls[j].speedx, balls[j].speedy])
+                        xb1 = np.array([balls[i].x, balls[i].y])
+                        xb2 = np.array([balls[j].x, balls[j].y])
+                        balls[i].speedx, balls[i].speedy = compute_velocity(vb1, vb2, ball1.raio, ball2.raio, xb1, xb2)
+                        balls[j].speedx, balls[j].speedy = compute_velocity(vb2, vb1, ball1.raio, ball2.raio, xb2, xb1)
+ ```
+ 
+ Método responsável por transferir a velocidade de uma bola para outra utilizando a fórmula da colisão elástica
+ 
+ ```
+ def compute_velocity(v1, v2, m1, m2, x1, x2):
+    return v1 - (2 * m2 / (m1 + m2)) * np.dot(v1 - v2, x1 - x2) / np.linalg.norm(x1 - x2) ** 2 * (x1 - x2)
+ ```
+ 
+ Definição das constantes
+
+```
+janela_lar = 800
+janela_alt = 600
+
+black = (00, 00, 00)
+gray = (80, 80, 80)
+white = (255, 255, 255)
+green = (20, 205, 20)
+red = (190, 20, 20)
+blue = (20, 20, 190)
+yellow = (230, 220, 20)
+pink = (200, 30, 200)
+nao = (20, 215, 190)
+purpleblue = (70, 20, 205)
+purplered = (215, 20, 70)
+bleue = (210, 90, 110)
+gren = (230, 130, 20)
+
+```
+
+Instanciação dos Objetos
+
+```
+ball1 = Ball(x=80, y=80, speedx=randrange(-4, 4)/10, speedy=-0.4, color=green)
+ball2 = Ball(x=120, y=310, speedx=randrange(-4, 4)/10, speedy=-0.4, color=blue)
+ball3 = Ball(x=200, y=330, speedx=randrange(-4, 4)/10, speedy=-0.5, color=purplered)
+ball4 = Ball(x=500, y=420, speedx=randrange(-4, 4)/10, speedy=-0.3, color=yellow)
+ball5 = Ball(x=350, y=240, speedx=randrange(-4, 4)/10, speedy=-0.4, color=red)
+ball6 = Ball(x=160, y=160, speedx=randrange(-4, 4)/10, speedy=-0.3, color=bleue)
+ball7 = Ball(x=240, y=620, speedx=randrange(-4, 4)/10, speedy=-0.3, color=pink)
+ball8 = Ball(x=450, y=660, speedx=-randrange(-4, 4)/10, speedy=-0.5, color=nao)
+ball9 = Ball(x=710, y=710, speedx=randrange(-4, 4)/10, speedy=-0.5, color=purpleblue)
+ball10 = Ball(x=340, y=540, speedx=randrange(-4, 4)/10, speedy=-0.5, color=gren)
+
+```
+
