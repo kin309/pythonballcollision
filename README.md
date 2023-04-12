@@ -155,3 +155,23 @@ ball10 = Ball(x=340, y=540, speedx=randrange(-4, 4)/10, speedy=-0.5, color=gren)
 
 ```
 
+Método principal onde ocorre o loop do jogo e o programa é executado
+
+```
+def principal():
+    loop = True
+
+    while loop:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                close()
+
+        for ball in balls:
+            pass
+            # ball.forca_aplicada()
+        janela.fill(black)
+        checkcollisions()
+        for ball in balls:
+            ball.principal()
+        pygame.display.update()
+```
