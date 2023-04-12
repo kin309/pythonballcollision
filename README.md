@@ -24,3 +24,24 @@ Utilizei também outras bibliotecas, para algumas funcionalidades, como por exem
   1. random: Uma biblioteca que gera números aleatórios.
   2. time: Consegue pausar a execução de código por um período de tempo, além de fornecer data e hora atuais.
   3. numpy: Utilizado para realizar algumas operações matemáticas mais complexas, que foi bastante útil na parte de codificar a física do programa.
+
+## Bolas
+
+O construtor da classe Ball, que possui uma série de parâmetros que definem as propriedades das bolas, como por exemplo, a velocidade atual, a fricção, o tamanho, a cor, etc.
+
+class Ball:
+    def __init__(self, x, y, speedx, speedy, color, diametro = 60, gravidade = 0.0002, accelerationx=0, friccao = 0.0009,
+                 constituicao = 0.09):
+        self.x = x
+        self.y = y
+        self.speedx = speedx
+        self.speedy = speedy
+        self.accelerationy = gravidade
+        self.accelerationx = accelerationx
+        self.constituicao = constituicao
+        self.friccao = friccao
+        self.speed = (self.speedx ** 2 + self.speedy **2) ** 0.5
+        self.color = color
+        self.diametro = diametro
+        self.raio = diametro/2
+        self.tempo_no_chao = 0
