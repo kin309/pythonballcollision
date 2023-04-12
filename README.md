@@ -89,5 +89,5 @@ class Ball:
                     self.y = 599.9 - self.raio
             else:
                 self.tempo_no_chao = 0
-
+                
  ```
