@@ -29,7 +29,7 @@ Utilizei também outras bibliotecas, para algumas funcionalidades, como por exem
 
 O construtor da classe Ball, que possui uma série de parâmetros que definem as propriedades das bolas, como por exemplo, a velocidade atual, a fricção, o tamanho, a cor, etc.
 
-```
+``
 class Ball:
     def __init__(self, x, y, speedx, speedy, color, diametro = 60, gravidade = 0.0002, accelerationx=0, friccao = 0.0009,
                  constituicao = 0.09):
@@ -46,11 +46,11 @@ class Ball:
         self.diametro = diametro
         self.raio = diametro/2
         self.tempo_no_chao = 0
- ```
+ ``
  
  Método principal da classe Ball responsável por todas as funcionalidades da classe, e por todos os comportamentos físicos do objeto
  
- 
+ ``
  def principal(self):
         pygame.draw.ellipse(janela, self.color, (self.x - self.raio, self.y - self.raio, self.diametro, self.diametro))
 
@@ -90,4 +90,4 @@ class Ball:
             else:
                 self.tempo_no_chao = 0
 
- 
+ ``
